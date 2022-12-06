@@ -4,3 +4,16 @@ img {
 .active {
   display: block !important;
 }
+.modal-wrapper {
+  background-color: blue;
+  opacity: 30%;
+  height: 1000px;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+.modal__block {
+  width: 33%;
+  margin-left: 33%;
+}
