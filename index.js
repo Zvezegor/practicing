@@ -42,3 +42,41 @@ openModal.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
   modal.classList.remove("active");
 });
+
+//forms
+
+const numInput = document.querySelector("#num"),
+  numBtn = document.querySelector("#check-num"),
+  div1 = document.querySelector("div"),
+  numMessage = document.createElement("h3"),
+  textBtn = document.querySelector("#check-text"),
+  textInput = document.querySelector("#text");
+
+numBtn.addEventListener("click", () => {
+  if (numInput.value != "" && isNaN(numInput.value)) {
+    numInput.style.border = "1px solid red";
+    div1.appendChild(numMessage);
+    numMessage.innerHTML = "Это по-твоему число?";
+  } else {
+    numInput.style.border = "";
+    numMessage.innerHTML = "Красавчик!";
+    del();
+  }
+});
+function del() {
+  setTimeout(function () {
+    numMessage.innerHTML = "";
+  }, 2000);
+}
+textBtn.addEventListener("click", () => {
+  if (textInput.value != "" && isNaN(textInput.value)) {
+    div1.appendChild(numMessage);
+    numMessage.innerHTML = "Красавчик!";
+    textInput.style.border = "";
+    del();
+  } else {
+    div1.appendChild(numMessage);
+    textInput.style.border = "1px solid red";
+    numMessage.innerHTML = "Написано же текст!";
+  }
+});
